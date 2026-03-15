@@ -1,0 +1,33 @@
+meta {
+  name: Configure (BYOK)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/configure
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "auth": {
+      "mode": "byok",
+      "provider": {
+        "type": "openai",
+        "base_url": "https://api.openai.com/v1",
+        "api_key": "sk-xxxx"
+      },
+      "model": "gpt-4o"
+    },
+    "roles": [
+      {
+        "id": "spec",
+        "prompt_path": "/path/to/prompt.md",
+        "work_dir": "/path/to/workdir",
+        "model": "gpt-4o"
+      }
+    ]
+  }
+}

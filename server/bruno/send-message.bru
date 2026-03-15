@@ -1,0 +1,17 @@
+meta {
+  name: Send Message
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/roles/spec/message
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "text": "請審核這個需求"
+  }
+}

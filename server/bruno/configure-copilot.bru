@@ -1,0 +1,28 @@
+meta {
+  name: Configure (Copilot)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/configure
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "auth": {
+      "mode": "copilot",
+      "github_token": "{{github_token}}"
+    },
+    "roles": [
+      {
+        "id": "spec",
+        "prompt_path": "/path/to/prompt.md",
+        "work_dir": "/path/to/workdir",
+        "model": ""
+      }
+    ]
+  }
+}

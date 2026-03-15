@@ -1,0 +1,19 @@
+meta {
+  name: Permission Response
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/roles/spec/permission_response
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "request_id": "00000000-0000-0000-0000-000000000000",
+    "allowed": true,
+    "answer": ""
+  }
+}
